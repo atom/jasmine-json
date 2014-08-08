@@ -4,14 +4,14 @@ unorderedEqual = (one, two) ->
     return false unless val in two
   true
 
-keys = (object) ->
+getKeys = (object) ->
   keys = []
   for k, v of object
     keys.push k if object.hasOwnProperty(k)
   keys
 
 objectSize = (object) ->
-  keys(object).length
+  getKeys(object).length
 
 class Failure
   constructor: (@path, @actual, @expected) ->
@@ -53,8 +53,8 @@ beforeEach ->
                   compare(appendToPath(path, i), actual[i], expected[i])
 
             when "Object"
-              actualKeys = keys(actual)
-              expectedKeys = keys(expected)
+              actualKeys = getKeys(actual)
+              expectedKeys = getKeys(expected)
               unless unorderedEqual(actualKeys, expectedKeys)
                 addFailure(path, "has keys #{JSON.stringify(actualKeys.sort())}", "has keys #{JSON.stringify(expectedKeys.sort())}")
               else
