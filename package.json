@@ -1,6 +1,6 @@
 {
   "name": "jasmine-json",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Add matchers for testing json",
   "main": "lib/matchers",
   "scripts": {
