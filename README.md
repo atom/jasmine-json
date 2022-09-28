@@ -1,4 +1,5 @@
-# Jasmine JSON matcher
+##### Atom and all repositories under Atom will be archived on December 15, 2022. Learn more in our [official announcement](https://github.blog/2022-06-08-sunsetting-atom/)
+ # Jasmine JSON matcher
 
 Comparing large objects with jasmine works great until you get an error, when it
 dumps the entire object to the console in a completely human unreadable format.
